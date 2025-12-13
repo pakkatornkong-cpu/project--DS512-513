@@ -1,34 +1,26 @@
 # project--DS512-513
-# Project DS512–513  
-## Walmart Weekly Sales Analysis
+ Dataset Description
 
-โครงงานนี้เป็นส่วนหนึ่งของรายวิชา **DS512 / DS513 (Data Analytics)**  
-มีวัตถุประสงค์เพื่อวิเคราะห์ข้อมูลยอดขายรายสัปดาห์ของ Walmart  
-เพื่อค้นหาแนวโน้ม (Insight) และปัจจัยที่ส่งผลต่อยอดขาย
+ข้อมูลเป็น **Walmart Weekly Sales Dataset**  
+ช่วงเวลา: **2010 – 2012**
 
----
-
-## 📊 Dataset Overview
-
-- **Dataset:** Walmart Weekly Sales
-- **ช่วงเวลา:** 2010 – 2012
-- **Target Variable:** Weekly_Sales
-- **Granularity:** รายสัปดาห์ แยกตาม Store และ Department
+###  Target Variable
+- **Weekly_Sales** : ยอดขายรายสัปดาห์ของแต่ละแผนกในแต่ละสาขา
 
 ---
 
-## 🧾 Data Dictionary
+##  Data Dictionary
 
 | Column Name | Type | Description |
-|------------|------|-------------|
-| Store | Integer | รหัสสาขา Walmart |
-| Dept | Integer | รหัสแผนกสินค้า |
-| Date | Date | วันที่ของข้อมูลรายสัปดาห์ |
-| Weekly_Sales | Float | ยอดขายรายสัปดาห์ (Target) |
+|------------|------|------------|
+| Store | Integer | รหัสสาขา |
+| Dept | Integer | รหัสแผนก |
+| Date | Date | วันที่ของสัปดาห์ |
+| Weekly_Sales | Float | ยอดขายรายสัปดาห์ |
 | IsHoliday | Boolean | ระบุว่าสัปดาห์นั้นเป็นวันหยุดหรือไม่ |
-| Temperature | Float | อุณหภูมิเฉลี่ย (°F) |
+| Temperature | Float | อุณหภูมิ |
 | Fuel_Price | Float | ราคาน้ำมัน |
-| MarkDown1–5 | Float | ตัวแปรโปรโมชัน (บางช่วงมีค่า missing) |
+| MarkDown1–5 | Float | มูลค่าโปรโมชั่น |
 | CPI | Float | ดัชนีราคาผู้บริโภค |
 | Unemployment | Float | อัตราการว่างงาน |
 | Size | Integer | ขนาดของสาขา |
@@ -36,33 +28,77 @@
 
 ---
 
-## 🔍 Exploratory Data Analysis (EDA)
+##  Exploratory Data Analysis (EDA)
 
-### 1. ภาพรวมยอดขายทั้งหมด
+### 1️⃣ ภาพรวมยอดขายทั้งหมด (Total Weekly Sales)
+
 ![Total Weekly Sales](picture/totol_weeklysales.png)
 
-### 2. ยอดขายแยกตามแผนก
+**คำอธิบาย:**  
+กราฟแสดงแนวโน้มยอดขายรวมของ Walmart ในแต่ละช่วงเวลา  
+พบว่ายอดขายมีความผันผวน และมีบางช่วงที่ยอดขายสูงขึ้นอย่างชัดเจน
+ซึ่งมักเกิดในช่วงเทศกาลหรือวันหยุดสำคัญ
+
+---
+
+### 2️⃣ ยอดขายแยกตามแผนก (Weekly Sales by Department)
+
 ![Weekly Sales by Department](picture/weekly_sales_department.png)
 
-### 3. เปรียบเทียบยอดขายช่วงวันหยุด vs ไม่ใช่วันหยุด
+**คำอธิบาย:**  
+แสดงการกระจายยอดขายของแต่ละแผนก  
+พบว่าแต่ละแผนกสร้างยอดขายไม่เท่ากัน
+สะท้อนถึงความสำคัญของการบริหารสินค้าในแต่ละหมวด
+
+---
+
+### 3️⃣ เปรียบเทียบยอดขายช่วงวันหยุด vs ไม่ใช่วันหยุด
+
 ![Holiday vs Non-Holiday](picture/weely_sales_holiday_vs_non.png)
 
-### 4. Correlation Matrix
-![Correlation Matrix](picture/correlation%20metrix.png)
+**คำอธิบาย:**  
+ยอดขายในช่วงวันหยุดมีค่าเฉลี่ยสูงกว่าสัปดาห์ปกติ  
+แสดงให้เห็นว่าพฤติกรรมผู้บริโภคในช่วงเทศกาล
+ส่งผลต่อยอดขายอย่างมีนัยสำคัญ
 
 ---
 
-## 📈 Key Insights
+### 4️⃣ Correlation Matrix
 
-- ยอดขายมี **Seasonality ชัดเจน** โดยเฉพาะช่วงปลายปี
-- ความแตกต่างของยอดขายระหว่าง **Department มีผลสูง**
-- ตัวแปรภายนอก เช่น CPI, อุณหภูมิ และราคาน้ำมัน  
-  มีความสัมพันธ์กับยอดขายค่อนข้างต่ำ
-- Promotion (MarkDown) ส่งผลต่อยอดขายเฉพาะบางช่วง
+![Correlation Matrix](picture/correlation_matrix.png)
+
+**คำอธิบาย:**  
+แสดงความสัมพันธ์ระหว่างตัวแปรเชิงตัวเลขกับยอดขาย  
+พบว่าตัวแปรเศรษฐกิจส่วนใหญ่มีความสัมพันธ์กับ Weekly_Sales
+ในระดับต่ำถึงปานกลาง และไม่เป็นความสัมพันธ์เชิงเส้นที่รุนแรง
 
 ---
 
-## 🛠️ Project Structure
+### 5️⃣ Dashboard Overview
+
+![Dashboard](picture/dashborad.png)
+
+**คำอธิบาย:**  
+Dashboard สรุปภาพรวมข้อมูลยอดขาย แนวโน้ม และการกระจายตัวของข้อมูล  
+ช่วยให้เข้าใจภาพรวมเชิงธุรกิจได้รวดเร็วในมุมมองเดียว
+
+---
+
+##  Key Findings
+
+- ยอดขายได้รับผลกระทบจากช่วงเวลาและวันหยุดอย่างชัดเจน  
+- ความแตกต่างของแผนกมีผลต่อยอดขายมากกว่าปัจจัยเศรษฐกิจ  
+- ข้อมูลมีความซับซ้อนและไม่เป็นเชิงเส้นทั้งหมด  
+
+---
+
+##  Future Work
+
+- พัฒนาโมเดล Machine Learning เพื่อพยากรณ์ยอดขาย  
+- ทดลองโมเดลที่สามารถจับความสัมพันธ์แบบไม่เชิงเส้น  
+- เพิ่ม Feature Engineering เพื่อปรับปรุงประสิทธิภาพของโมเดล
+
+##  Project Structure
 
 ```text
 project--DS512-513/
