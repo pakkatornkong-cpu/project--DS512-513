@@ -28,39 +28,29 @@
 
 ---
 
-##  Exploratory Data Analysis (EDA)
+## Exploratory Data Analysis (EDA)
 
-### 1️⃣ ภาพรวมยอดขายทั้งหมด (Total Weekly Sales)
-
-![Total Weekly Sales](picture/totol_weeklysales.png)
+### 1. ภาพรวมยอดขายทั้งหมด (Total Weekly Sales)
+![Total Weekly Sales](picture/totol%20weeklysales.png)
 
 **คำอธิบาย:**  
-กราฟแสดงแนวโน้มยอดขายรวมของ Walmart ในแต่ละช่วงเวลา  
-พบว่ายอดขายมีความผันผวน และมีบางช่วงที่ยอดขายสูงขึ้นอย่างชัดเจน
+แสดงแนวโน้มยอดขายรวมรายสัปดาห์ของ Walmart ตลอดช่วงเวลา  
+พบว่ายอดขายมีความผันผวน และมีบางช่วงที่ยอดขายสูงขึ้นอย่างชัดเจน  
 ซึ่งมักเกิดในช่วงเทศกาลหรือวันหยุดสำคัญ
 
 ---
 
-### 2️⃣ ยอดขายแยกตามแผนก (Weekly Sales by Department)
-
-![Weekly Sales by Department](picture/weekly_sales_department.png)
+### 2. ยอดขายแยกตามแผนก (Weekly Sales by Department)
+![Weekly Sales by Department](picture/weekly%20sales%20department.png)
 
 **คำอธิบาย:**  
 แสดงการกระจายยอดขายของแต่ละแผนก  
-พบว่าแต่ละแผนกสร้างยอดขายไม่เท่ากัน
-สะท้อนถึงความสำคัญของการบริหารสินค้าในแต่ละหมวด
+พบว่าแต่ละแผนกสร้างยอดขายไม่เท่ากัน  
+สะท้อนถึงความสำคัญของการบริหารสินค้าในแต่ละหมวดสินค้า
 
 ---
 
-### 3️⃣ เปรียบเทียบยอดขายช่วงวันหยุด vs ไม่ใช่วันหยุด
-
-![Holiday vs Non-Holiday](picture/weely_sales_holiday_vs_non.png)
-
-**คำอธิบาย:**  
-ยอดขายในช่วงวันหยุดมีค่าเฉลี่ยสูงกว่าสัปดาห์ปกติ  
-แสดงให้เห็นว่าพฤติกรรมผู้บริโภคในช่วงเทศกาล
-ส่งผลต่อยอดขายอย่างมีนัยสำคัญ
-
+### 3. เปรียบเทียบยอดขายช่วงวันหยุด vs ไม่ใช่วันหยุด
 ---
 
 ### 4️⃣ Correlation Matrix
